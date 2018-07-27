@@ -4,7 +4,8 @@
   "description": "librarysytem",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --entry ./app/server/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,21 @@
   "bugs": {
     "url": "https://github.com/PareshBorkar/librarySystem/issues"
   },
-  "homepage": "https://github.com/PareshBorkar/librarySystem#readme"
+  "homepage": "https://github.com/PareshBorkar/librarySystem#readme",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "lodash": "^4.17.10",
+    "pm2": "^3.0.3",
+    "react": "^16.4.1",
+    "redux": "^4.0.0",
+    "sequelize": "^4.38.0",
+    "webpack": "^4.16.2",
+    "webpack-cli": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "webpack-dev-server": "^3.1.5"
+  }
 }
