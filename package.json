@@ -1,0 +1,22 @@
+{
+  "name": "librarysytem",
+  "version": "1.0.0",
+  "description": "librarysytem",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PareshBorkar/librarySystem.git"
+  },
+  "keywords": [
+    "library"
+  ],
+  "author": "pborkar0003@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PareshBorkar/librarySystem/issues"
+  },
+  "homepage": "https://github.com/PareshBorkar/librarySystem#readme"
+}
