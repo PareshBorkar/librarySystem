@@ -1,5 +1,5 @@
 const graphql = require('graphql');
-const { GraphQLObjectType, GraphQLList, GraphQLID, GraphQLNonNull } = graphql;
+const { GraphQLObjectType, GraphQLList, GraphQLID, GraphQLString, GraphQLNonNull } = graphql;
 
 const models = require('../models');
 
@@ -7,11 +7,13 @@ const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: () => ({
         users: {
-            type: new GraphQLList(),
+            type: GraphQLString,
             resolve() {
                 models.users.findOne().then(user => {
                     return user;
-                    // console.log(user.get('idusers'));
+                    console.log("======", user.get('idusers'));
+                }).catch(err => {
+                    console.log("error ", err);
                 });
                 // return Song.find({});
             }

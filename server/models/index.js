@@ -31,12 +31,12 @@ sequelize
 
 
 // load entity files from model folder & map with database tables
-var models = path.join(process.cwd(), '/');
+var models = path.join(process.cwd(), '/server/models/');
 
 fs
     .readdirSync(models)
     .filter(function (file) {
-        return (file.indexOf('.') !== 0) && (file !== "index.js");
+        return (file.indexOf('.') !== 0) && (file !== "index.js") && (file.slice(-3) === '.js')
     })
     .forEach(function (file) {
         var model = sequelize.import(path.join(models, file));

@@ -1,6 +1,15 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const globalCssLoaders = [
+  {
+    loader: 'css-loader',
+    options: {
+      sourceMap: true,
+    },
+  },
+];
+
 module.exports = {
   entry: './client/index.js',
   output: {
@@ -10,14 +19,30 @@ module.exports = {
   module: {
     rules: [
       {
-        use: 'babel-loader',
+        use: {
+          loader: 'babel-loader',
+          options: {
+            plugins: [
+              ['import', { 'libraryName': 'antd', 'libraryDirectory': 'es', 'style': true }]
+            ]
+          }
+        },
         test: /\.js$/,
         exclude: /node_modules/
       },
       {
-        use: ['style-loader', 'css-loader'],
-        test: /\.css$/
+        test: /\.less$/,
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader'
+        }, {
+          loader: 'less-loader', options: {
+            javascriptEnabled: true
+          }
+        }]
       }
+
     ]
   },
   plugins: [

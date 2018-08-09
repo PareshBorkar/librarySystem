@@ -4,10 +4,8 @@
   "description": "librarysytem",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --entry ./app/client/index.js",
-    "server": "nodemon index.js --ignore client",
-    "start": "concurrently \"npm run dev\" \"npm run server\""
+    "dev": "nodemon index.js --ignore client",
+    "webpack": "webpack"
   },
   "repository": {
     "type": "git",
@@ -23,12 +21,14 @@
   },
   "homepage": "https://github.com/PareshBorkar/librarySystem#readme",
   "dependencies": {
+    "antd": "^3.8.0",
     "apollo-client": "^0.8.1",
     "axios": "^0.15.3",
-    "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
-    "babel-preset-env": "^1.1.8",
-    "babel-preset-react": "^6.22.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-import": "^1.8.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "body-parser": "^1.16.0",
     "concurrently": "^3.6.1",
     "css-loader": "^0.26.1",
@@ -39,7 +39,9 @@
     "fs": "0.0.1-security",
     "graphql": "^0.8.2",
     "graphql-tag": "^2.9.2",
-    "html-webpack-plugin": "^2.26.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^2.30.1",
+    "less-loader": "^4.1.0",
     "lodash": "^4.17.4",
     "mysql2": "^1.6.1",
     "nodemon": "*",
@@ -53,6 +55,11 @@
     "sequelize": "^4.38.0",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.0",
+    "webpack-cli": "^3.1.0",
     "webpack-dev-middleware": "^1.9.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1"
   }
 }
