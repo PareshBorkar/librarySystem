@@ -4,7 +4,7 @@
   "description": "librarysytem",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js --ignore client",
+    "dev": "nodemon --watch client --exec babel-node index.js --ignore client",
     "webpack": "webpack"
   },
   "repository": {
@@ -24,6 +24,7 @@
     "antd": "^3.8.0",
     "apollo-client": "^0.8.1",
     "axios": "^0.15.3",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^6.4.1",
     "babel-plugin-import": "^1.8.0",
