@@ -2,7 +2,10 @@ const express = require('express');
 const expressGraphQL = require('express-graphql');
 const bodyParser = require('body-parser');
 const schema = require('./schema/schema');
-// const App = require('../client/components/App');
+const Appp = require('../client/components/SongList');
+import React from 'react';
+const ReactDOMServer = require('react-dom/server');
+
 
 const app = express();
 
@@ -16,7 +19,7 @@ app.get("*", (req, res) => {
         <script src="/bundle.js" defer></script>
       </head>
       <body>
-        <div id="root">${renderToString(<App />)}</div>
+        <div id="root">${ReactDOMServer.renderToString(<Appp />)}</div>
       </body>
     </html>`)
 });
