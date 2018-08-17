@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+var path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const globalCssLoaders = [
@@ -11,9 +12,9 @@ const globalCssLoaders = [
 ];
 
 module.exports = {
-  entry: './client/index.js',
+  entry: path.resolve(__dirname, 'client/index.js'),
   output: {
-    path: '/',
+    path: path.resolve(__dirname, 'build/'),
     filename: 'bundle.js'
   },
   module: {
@@ -42,12 +43,11 @@ module.exports = {
           }
         }]
       }
-
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'client/index.html'
+      template: path.resolve(__dirname, 'client/index.html')
     })
   ]
 };
